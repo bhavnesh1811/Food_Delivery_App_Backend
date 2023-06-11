@@ -1,6 +1,7 @@
 const express = require("express");
 require("dotenv").config();
 const { connection } = require("./Config/db");
+const { RestaurantRouter } = require("./Routes/Restaurant.route");
 const { UserRouter } = require("./Routes/User.Router");
 
 const app = express();
@@ -12,6 +13,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api", UserRouter);
+app.use("/api/restaurant", RestaurantRouter);
 app.listen(process.env.PORT, async () => {
   try {
     await connection;

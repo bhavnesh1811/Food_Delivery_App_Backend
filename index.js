@@ -2,7 +2,7 @@ const express = require("express");
 require("dotenv").config();
 const { connection } = require("./Config/db");
 const { RestaurantRouter } = require("./Routes/Restaurant.route");
-const { UserRouter } = require("./Routes/User.Router");
+const { UserRouter } = require("./Routes/User.route");
 
 const app = express();
 
